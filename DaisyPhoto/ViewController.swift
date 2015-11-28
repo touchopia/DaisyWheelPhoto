@@ -34,10 +34,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func addSticker() {
         
-        let image = UIImage(named: "1")
+        let image = UIImage(named: "wheel")
         
         if let stickerImage = image {
             let imageView = PinchZoomImageView(image: stickerImage)
+            imageView.contentMode = .ScaleAspectFit
+            imageView.frame = CGRectMake(0, 0, 200, 200)
             self.view.addSubview(imageView)
         }
         
